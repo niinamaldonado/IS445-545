@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.ajax({
+                    url: 'https://httpbin.org/get',
+                    type: 'GET',
+                    success: function (data, status) {
+                        alert("Data: " + data + "\nStatus: " + status);  
+                    },
+                    error: function (data) {
+                        alert('woops!'); //or whatever
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>Send an HTTP GET request
+    </button>
+</body>
+
+</html>
